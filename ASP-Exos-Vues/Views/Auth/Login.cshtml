@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="fr-be">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exercice ASP MVC : Se connecter</title>
+</head>
+<body>
+    <header>
+        <h1>ASP MVC</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/Home/Contact">Nous contacter</a></li>
+                <li><a href="/Auth/Register">S'enregistrer</a></li>
+                <li><a href="/Auth/Login">Se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Veuillez vous identifier :</h1>
+            <form method="post">
+                <div>
+                    <label for="email">Courriel : </label>
+                    <input type="email" name="email" id="email" />
+                </div>
+                <div>
+                    <label for="password">Mot de passe : </label>
+                    <input type="password" name="password" id="password" />
+                </div>
+                <button type="submit">Se connecter</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>Samuel Legrain - Interface 3 Bruxelles</p>
+    </footer>
+</body>
+</html>
+
