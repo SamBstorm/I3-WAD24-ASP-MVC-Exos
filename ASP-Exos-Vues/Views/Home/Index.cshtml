@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Dictionary<string, string> links = new Dictionary<string, string>() { 
+        { "Accueil", "/" },
+        { "Nous contacter", "/Home/Contact" },
+        { "S'enregistrer", "/Auth/Register" },
+        { "Se connecter", "/Auth/Login" }
+    };
+    /*
+    Dictionary<string, string> links = new Dictionary<string, string>();
+    links.Add("Accueil", "/");
+    links.Add("Nous contacter", "/Home/Contact");
+    links.Add("S'enregistrer", "/Auth/Register");
+    links.Add("Se connecter", "/Auth/Login");*/
+}
+<!DOCTYPE html>
 <html lang="fr-be">
 <head>
     <meta charset="utf-8" />
@@ -10,10 +24,9 @@
         <h1>ASP MVC</h1>
         <nav>
             <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/Home/Contact">Nous contacter</a></li>
-                <li><a href="/Auth/Register">S'enregistrer</a></li>
-                <li><a href="/Auth/Login">Se connecter</a></li>
+                @foreach(KeyValuePair<string, string> kvp in links){
+                    <li><a href="@kvp.Value">@kvp.Key</a></li>
+                    }
             </ul>
         </nav>
     </header>

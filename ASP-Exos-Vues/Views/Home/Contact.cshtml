@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string address = "Rue Gaucheret 88,<br/>1030 Bruxelles";
+    string tel = "02 219 15 10";
+}
+<!DOCTYPE html>
 <html lang="fr-be">
 <head>
     <meta charset="utf-8" />
@@ -21,8 +25,9 @@
         <section>
             <h1>Interface 3 Bruxelles</h1>
             <p><strong>Lenoir Nicole</strong></p>
-            <address>Rue Gaucheret 88,<br />1030 Bruxelles</address>
-            <a href="tel:+3222191510">02 219 15 10</a>
+            @* <address>@address.Substring(0, address.IndexOf('\n'))<br>@address.Substring(address.IndexOf('\n'))</address> *@
+            <address>@Html.Raw(address)</address>
+            <a href="tel:@( "+32" + tel.Replace(" ", "").Substring(1))">@tel</a>
             <a href="mailto:info@interface3.be">info@interface3.be</a>
         </section>
     </main>
