@@ -1,7 +1,9 @@
-﻿@{
+﻿@using ASP_Exos_Vues.Models.Home
+@model ContactViewModel
+@*{
     string address = "Rue Gaucheret 88,<br/>1030 Bruxelles";
     string tel = "02 219 15 10";
-}
+}*@
 <!DOCTYPE html>
 <html lang="fr-be">
 <head>
@@ -26,8 +28,10 @@
             <h1>Interface 3 Bruxelles</h1>
             <p><strong>Lenoir Nicole</strong></p>
             @* <address>@address.Substring(0, address.IndexOf('\n'))<br>@address.Substring(address.IndexOf('\n'))</address> *@
-            <address>@Html.Raw(address)</address>
-            <a href="tel:@( "+32" + tel.Replace(" ", "").Substring(1))">@tel</a>
+            @*<address>@Html.Raw(address)</address>*@
+            <address>@Model.Address.Street @Model.Address.Number,<br/>@Model.Address.ZipCode @Model.Address.City<br />@Model.Address.Country</address>
+            @*<a href="tel:@( "+32" + tel.Replace(" ", "").Substring(1))">@tel</a>*@
+            <a href="tel:@Model.Phone">@Model.Phone.Number</a>
             <a href="mailto:info@interface3.be">info@interface3.be</a>
         </section>
     </main>

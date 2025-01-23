@@ -7,8 +7,4 @@
     <RootNamespace>ASP_Exos_Vues</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
