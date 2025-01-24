@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ASP_Exos_Vues.Handlers;
+using ASP_Exos_Vues.Models.Auth;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ASP_Exos_Vues.Controllers
 {
@@ -11,15 +13,38 @@ namespace ASP_Exos_Vues.Controllers
             return RedirectToAction("Register");
         }
 
+        [HttpGet]
         public IActionResult Register()
         {
             Title += " - S'enregistrer";
-            if (TempData.ContainsKey("message"))
+            /*if (TempData.ContainsKey("message"))
             {
                 return RedirectToAction(nameof(Login));
             }
-            TempData["message"] = "Vous êtes maintenant enregistré!";
+            TempData["message"] = "Vous êtes maintenant enregistré!";*/
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Register(RegisterForm form)
+        {
+            try
+            {
+                ModelState
+                    .RequiredAge(form.BirthDate, nameof(form.BirthDate))
+                    .RequiredLowerCase(form.Password, nameof(form.Password))
+                    .RequiredUpperCase(form.Password, nameof(form.Password))
+                    .RequiredNumber(form.Password, nameof(form.Password))
+                    .RequiredSymbol(form.Password, nameof(form.Password));
+                if (!ModelState.IsValid) throw new ArgumentException();
+                //Envois les informations en BD
+                TempData["message"] = "Vous êtes maintenant enregistré!";
+                return RedirectToAction(nameof(Login));
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         public IActionResult Login()
