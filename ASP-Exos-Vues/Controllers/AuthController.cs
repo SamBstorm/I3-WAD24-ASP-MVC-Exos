@@ -52,5 +52,24 @@ namespace ASP_Exos_Vues.Controllers
             Title += " - Se connecter";
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Login(LoginForm form) {
+            Title += " - Se connecter";
+            try
+            {
+                ModelState.RequiredLowerCase(form.Password, nameof(form.Password))
+                        .RequiredUpperCase(form.Password, nameof(form.Password))
+                        .RequiredNumber(form.Password, nameof(form.Password))
+                        .RequiredSymbol(form.Password, nameof(form.Password));
+                if (!ModelState.IsValid) throw new ArgumentException();
+                //Vérifier si l'utilisateur est un utilisateur existant dans la DB
+                return RedirectToAction(nameof(Index), "Home");
+            }
+            catch (Exception)
+            {
+                return View();
+            }
+        }
     }
 }

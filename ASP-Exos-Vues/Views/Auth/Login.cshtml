@@ -1,9 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using ASP_Exos_Vues.Models.Auth
+@model LoginForm
+<!DOCTYPE html>
 <html lang="fr-be">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
 </head>
 <body>
     <header>
@@ -25,16 +31,18 @@
                     <p>@TempData["message"]</p>
                 </div>
             }
-            <form method="post">
+            <form method="post" class="col-6 container-md">
                 <div>
-                    <label for="email">Courriel : </label>
-                    <input type="email" name="email" id="email" />
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div>
-                    <label for="password">Mot de passe : </label>
-                    <input type="password" name="password" id="password" />
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger">Le champ Mot de passe ne correspond pas au bon format.</span>
                 </div>
-                <button type="submit">Se connecter</button>
+                <button type="submit" class="btn btn-success">Se connecter</button>
             </form>
         </section>
     </main>
