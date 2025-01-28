@@ -1,8 +1,8 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
-@using ASP_Exos_Vues.Models.Auth
-@model LoginForm
-<!DOCTYPE html>
+﻿@model LoginForm
+@{
+    Layout = "_LayoutLite";
+}
+@*<!DOCTYPE html>
 <html lang="fr-be">
 <head>
     <meta charset="utf-8" />
@@ -23,7 +23,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main>*@
         <section>
             <h1>Veuillez vous identifier :</h1>
             @if(TempData.ContainsKey("message")){
@@ -45,10 +45,10 @@
                 <button type="submit" class="btn btn-success">Se connecter</button>
             </form>
         </section>
-    </main>
+    @*</main>
     <footer>
         <p>Samuel Legrain - Interface 3 Bruxelles</p>
     </footer>
 </body>
-</html>
+</html>*@
 

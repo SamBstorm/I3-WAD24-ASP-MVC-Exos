@@ -64,6 +64,7 @@ namespace ASP_Exos_Vues.Controllers
                         .RequiredSymbol(form.Password, nameof(form.Password));
                 if (!ModelState.IsValid) throw new ArgumentException();
                 //Vérifier si l'utilisateur est un utilisateur existant dans la DB
+                TempData["isConnected"] = form.Email;
                 return RedirectToAction(nameof(Index), "Home");
             }
             catch (Exception)

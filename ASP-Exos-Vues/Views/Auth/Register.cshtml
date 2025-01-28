@@ -1,6 +1,8 @@
-﻿@using ASP_Exos_Vues.Models.Auth
-@model RegisterForm
-<!DOCTYPE html>
+﻿@model RegisterForm
+@{
+    Layout = "_LayoutLite";
+}
+@*<!DOCTYPE html>
 <html lang="fr-be">
 <head>
     <meta charset="utf-8" />
@@ -21,7 +23,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main>*@
         <section>
             <h1>S'enregistrer</h1>
             @using (Html.BeginForm(FormMethod.Post, new { @class = "col-6 container-md" }))
@@ -59,10 +61,10 @@
                 <button type="submit">S'enregistrer</button>
             }
         </section>
-    </main>
+    @*</main>
     <footer>
         <p>Samuel Legrain - Interface 3 Bruxelles</p>
     </footer>
 </body>
-</html>
+</html>*@
 
