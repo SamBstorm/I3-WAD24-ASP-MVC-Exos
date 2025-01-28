@@ -1,35 +1,10 @@
 ﻿@model ContactViewModel
 
-@*<!DOCTYPE html>
-<html lang="fr-be">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-    <header>
-        <h1>ASP MVC</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/Home/Contact">Nous contacter</a></li>
-                <li><a href="/Auth/Register">S'enregistrer</a></li>
-                <li><a href="/Auth/Login">Se connecter</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>*@
-        <section>
-            <h1>Interface 3 Bruxelles</h1>
-            <p><strong>Lenoir Nicole</strong></p>
-            <address>@Model.Address.Street @Model.Address.Number,<br/>@Model.Address.ZipCode @Model.Address.City<br />@Model.Address.Country</address>
-            <a href="tel:@Model.Phone">@Model.Phone.Number</a>
-            <a href="mailto:info@interface3.be">info@interface3.be</a>
-        </section>
-    @*</main>
-    <footer>
-        <p>Samuel Legrain - Interface 3 Bruxelles</p>
-    </footer>
-</body>
-</html>*@
+<section>
+    <h1>Interface 3 Bruxelles</h1>
+    <p><strong>Lenoir Nicole</strong></p>
+    <address>@Model.Address.Street @Model.Address.Number,<br/>@Model.Address.ZipCode @Model.Address.City<br />@Model.Address.Country</address>
+    <a href="tel:@Model.Phone">@Model.Phone.Number</a>
+    <a href="mailto:info@interface3.be">info@interface3.be</a>
+</section>
+    

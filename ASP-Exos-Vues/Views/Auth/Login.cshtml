@@ -2,53 +2,25 @@
 @{
     Layout = "_LayoutLite";
 }
-@*<!DOCTYPE html>
-<html lang="fr-be">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewBag.Title</title>
-    <link rel="stylesheet" type="text/css" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>ASP MVC</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/Home/Contact">Nous contacter</a></li>
-                <li><a href="/Auth/Register">S'enregistrer</a></li>
-                <li><a href="/Auth/Login">Se connecter</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>*@
-        <section>
-            <h1>Veuillez vous identifier :</h1>
-            @if(TempData.ContainsKey("message")){
-                <div style="width:80%;margin:0 auto;border:1px solid #001100; border-radius: 15px; padding : 15px; color : #001100; background-color : #99FF99">
-                    <p>@TempData["message"]</p>
-                </div>
-            }
-            <form method="post" class="col-6 container-md">
-                <div>
-                    <label asp-for="Email" class="form-label"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div>
-                    <label asp-for="Password" class="form-label"></label>
-                    <input asp-for="Password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger">Le champ Mot de passe ne correspond pas au bon format.</span>
-                </div>
-                <button type="submit" class="btn btn-success">Se connecter</button>
-            </form>
-        </section>
-    @*</main>
-    <footer>
-        <p>Samuel Legrain - Interface 3 Bruxelles</p>
-    </footer>
-</body>
-</html>*@
+<section>
+    <h1>Veuillez vous identifier :</h1>
+    @if(TempData.ContainsKey("message")){
+        <div style="width:80%;margin:0 auto;border:1px solid #001100; border-radius: 15px; padding : 15px; color : #001100; background-color : #99FF99">
+            <p>@TempData["message"]</p>
+        </div>
+    }
+    <form method="post" class="col-6 container-md">
+        <div>
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Password" class="form-label"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger">Le champ Mot de passe ne correspond pas au bon format.</span>
+        </div>
+        <button type="submit" class="btn btn-success">Se connecter</button>
+    </form>
+</section>
 

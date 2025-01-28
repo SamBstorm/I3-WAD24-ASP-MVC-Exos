@@ -1,43 +1,4 @@
-﻿@*@{
-    Dictionary<string, string> links = new Dictionary<string, string>() { 
-        { "Accueil", "/" },
-        { "Nous contacter", "/Home/Contact" },
-        { "S'enregistrer", "/Auth/Register" },
-        { "Se connecter", "/Auth/Login" }
-    };
-    /*
-    Dictionary<string, string> links = new Dictionary<string, string>();
-    links.Add("Accueil", "/");
-    links.Add("Nous contacter", "/Home/Contact");
-    links.Add("S'enregistrer", "/Auth/Register");
-    links.Add("Se connecter", "/Auth/Login");*/
-}
-<!DOCTYPE html>
-<html lang="fr-be">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-    <header>
-        <h1>ASP MVC</h1>
-        <nav>
-            <ul>
-                @foreach(KeyValuePair<string, string> kvp in links){
-                    <li><a href="@kvp.Value">@kvp.Key</a></li>
-                    }
-            </ul>
-        </nav>
-    </header>
-    <main>*@
-        <section>
-            <h1>Bienvenue sur notre site d'exercices</h1>
-            <p>Lorem Ipsum Dolem</p>
-        </section>
-    @*</main>
-    <footer>
-        <p>Samuel Legrain - Interface 3 Bruxelles</p>
-    </footer>
-</body>
-</html>*@
+﻿<section>
+    <h1>Bienvenue sur notre site d'exercices</h1>
+    <p>Lorem Ipsum Dolem</p>
+</section>
